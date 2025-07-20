@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("../img/fondo.PNG");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+/* Header */
+.header {
+    background-color: #0A1D37;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.logo-icon {
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(45deg, #ff6b35, #ff8c42);
+    border-radius: 5px;
+    position: relative;
+}
+
+.logo img{
+width: 75px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Menú Hamburguesa */
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Animación del menú hamburguesa cuando está activo */
+.menu-toggle.active .menu-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .menu-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .menu-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Overlay del menú */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menú lateral */
+.side-menu {
+    position: absolute;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: #0A1D37;
+    z-index: 999;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.menu-header {
+    padding: 20px;
+    border-bottom: 1px solid #444;
+    background-color: #E36414;
+}
+
+.menu-header h3 {
+    color: white;
+    font-size: 20px;
+    text-align: center
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: left;
+}
+
+.menu-item i{
+    padding-right: 10px;
+}
+
+.menu a:hover{
+    background-color: #EB8125;
+}
+
+.close{
+    align-items: center;
+    justify-content: center;
+}
+
+.close i{
+    padding-right: 10px;
+}
+
+.cerrarSesion{
+font-size: 20px;
+color: white;
+border-radius: 10px;
+background-color: #D72638;
+padding: 20px;
+margin-top: 100px;
+margin-left: 60px;
+border-style: none;
+}
+
+.cerrarSesion :hover{
+    border-color: white;
+    transform: scale(1.1);
+    background-color: #0A1D37;
+    color: #fff;
+}
+
+.pregunta-contenedor{
+    color:#001b41;
+    font-size: 30px;
+    margin-top: 130px;
+   margin-left: 140px;
+
+}
+
+  .respuestaSi {
+    font-size: 18px;
+    padding: 1rem 4rem;
+    background-color: #E36414;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 80px;
+    
+  }
+  
+  .respuestaSi:hover {
+    background-color: #e68a1f;
+  }
+
+  .respuestaNo{
+    font-size: 18px;
+    padding: 1rem 4rem;
+    background-color: #E36414;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 80px;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+
+    .respuestaNo:hover {
+    background-color: #e68a1f;
+  }
+
+  .opciones{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+   .input-field {
+    margin-top: 240px;
+  padding: 0.8rem 0.8rem;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #ffff;
+  margin-left: 250px;
+  }
+
+  .SeccionBuscarNit{
+    margin-top: 150px; 
+    padding: 20px;
+    margin-left: 200px;
+    color: #001b41;
+  }
+
+.SeccionBuscarNit {
+    display: none;
+  background-color: #001b41;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 100px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.buscartxt{
+    color: white;
+}
+
+#inputBusquedaNit {
+  width: 97%;
+  padding: 12px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#listaClientes .cliente {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.cliente-info {
+  font-size: 16px;
+}
+
+.boton-agregar {
+  background-color: #ff6a00;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.boton-agregar:hover {
+  background-color:black;
+  transition-duration: 0.5s;
+}
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomePage-Trackline</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/AddNit.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/CamionLogo.png" alt="" />
+      <span class="logo-text">TrackLine</span>
+    </div>
+    <div class="menu-toggle" id="menuToggle">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+    </div>
+  </header>
+
+  <!-- Overlay del menú -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Menú lateral -->
+  <nav class="side-menu" id="sideMenu">
+    <div class="menu-header">
+      <h3>Menú Principal</h3>
+    </div>
+    <div class="menu">
+      <a href="Contact.html" class="menu-item"><i class="fa-solid fa-phone"></i></i>Contactanos</a>
+      <a href="Account.html" class="menu-item"><i class="fa-solid fa-user"></i>Mi cuenta</a>
+      <a href="#" class="menu-item"><i class="fa-solid fa-truck-fast"></i>Entregas</a>
+    </div>
+    <div class="close">
+    <button id="btncerrarSesion" class="cerrarSesion"><i class="fa-solid fa-xmark"></i></i>Cerrar Sesion</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="pregunta-contenedor">
+      <div class="pregunta">
+        <h1>¿Desea hacer un nuevo pedido aduanal?</h1>
+      </div>
+      <div class="opciones">
+        <button class="respuestaSi" id="btnSi">Si</button>
+        <button class="respuestaNo" id="btnNo">No</button>
+      </div>
+    </div>
+
+    <section id="busquedaNit" class="SeccionBuscarNit">
+      <h3 class="buscartxt">Buscar cliente</h3>
+      <input type="text" id="inputBusquedaNit" placeholder="Ingrese el NIT o el nombre del cliente"
+        onkeyup="filtrarClientes()" />
+
+      <form id="formClientes">
+        <!-- Aquí se cargarán los clientes dinámicamente -->
+        <div id="listaClientes"></div>
+      </form>
+    </section>
+
+
+  </main>
+
+
+  <script src="js/AddNit.js"></script>
+</body>
+
+</html>

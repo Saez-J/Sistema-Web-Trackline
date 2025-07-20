@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrar Pedido Aduanal</title>
+  <link rel="stylesheet" href="css/ServiceOrder.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+ <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/CamionLogo.png" alt="" />
+      <span class="logo-text">TrackLine</span>
+    </div>
+    <div class="menu-toggle" id="menuToggle">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+    </div>
+  </header>
+
+  <!-- Overlay del menú -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Menú lateral -->
+  <nav class="side-menu" id="sideMenu">
+    <div class="menu-header">
+      <h3>Menú Principal</h3>
+    </div>
+    <div class="menu">
+      <a href="Contact.html" class="menu-item"><i class="fa-solid fa-phone"></i></i>Contactanos</a>
+      <a href="Account.html" class="menu-item"><i class="fa-solid fa-user"></i>Mi cuenta</a>
+      <a href="#" class="menu-item"><i class="fa-solid fa-truck-fast"></i>Entregas</a>
+    </div>
+    <div class="close">
+    <button id="btncerrarSesion" class="cerrarSesion"><i class="fa-solid fa-xmark"></i></i>Cerrar Sesion</button>
+    </div>
+  </nav>
+  <main class="container">
+    <h1>Registrar nuevo pedido Aduanal</h1>
+
+    <section class="accordion-container">
+      <div class="accordion">
+        <div class="accordion-header">Encabezado</div>
+        <div class="accordion-body">
+          <div class="form-container">
+            <div class="form-group">
+              <label for="Fecha">Fecha</label>
+              <input type="date" id="fecha" placeholder="DD/MM/YY" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Encargado1">Encargado</label>
+              <input type="text" id="encargado1" placeholder="obligatorio" class="input-field" required>
+            </div>
+            <div class="form-group">
+              <label for="Referencia">Referencia</label>
+              <input type="text" id="referencia" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="importador">Importador</label>
+              <input type="text" id="importador" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="NIT">NIT</label>
+              <input type="text" id="NIT" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="registroIVA">Registro IVA</label>
+              <input type="text" id="registroIVA" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="FacturarA">Facturar a:</label>
+              <input type="text" id="facturarA" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="encargado2">Encargado</label>
+              <input type="number" id="encargado2" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="NIT2">NIT</label>
+              <input type="number" id="NIT2" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="RegistroIVA2">Registro IVA</label>
+              <input type="number" id="RegistroIVA2" placeholder="Opcional" class="input-field">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">Información del embarque</div>
+        <div class="accordion-body">
+          <div class="form-container">
+            <div class="form-group">
+              <label for="facturas">Facturas</label>
+              <input type="text" id="facturas" placeholder="Facturas" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="proveedor">Proveedor Ref.</label>
+              <input type="text" id="proveedor" placeholder="Proveedor Ref." class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="bultos">Bultos</label>
+              <input type="number" id="bultos" placeholder="Bultos" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="tipo">Tipo</label>
+              <input type="text" id="tipo" placeholder="Tipo" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="kilos">Kilos</label>
+              <input type="number" id="kilos" placeholder="Kilos" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="volumen">Volumen</label>
+              <input type="number" id="volumen" placeholder="Volumen" class="input-field">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">Servicios</div>
+        <div class="accordion-body">
+
+
+          <div class="form-container">
+            <!-- Fila 1 -->
+            <div class="form-group">
+              <label for="tipoServicio">Tipo de servicio</label>
+              <select id="tipoServicio" class="input-field">
+                <option value="">Seleccione</option>
+                <option value="exportacion">Exportación</option>
+                <option value="importacion">Importación</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="primeraModalidad">Primera modalidad</label>
+              <input type="text" id="primeraModalidad" placeholder="Primera modalidad" class="input-field">
+            </div>
+
+            <div class="form-group">
+              <label for="segundaModalidad">Segunda modalidad</label>
+              <input type="text" id="segundaModalidad" placeholder="Segunda modalidad" class="input-field">
+            </div>
+
+            <!-- Fila 2 -->
+            <div class="form-group">
+              <label for="declaracion">Declaración de Mercancías</label>
+              <input type="text" id="declaracion" placeholder="Declaración de mercancía" class="input-field">
+            </div>
+
+            <div class="form-group">
+              <label for="digitador">Digitador</label>
+              <input type="text" id="digitador" placeholder="Digitador" class="input-field">
+            </div>
+
+            <div class="form-group">
+              <label for="tramitador">Tramitador</label>
+              <input type="text" id="tramitador" placeholder="Tramitador" class="input-field">
+            </div>
+
+            <!-- Fila 3: Recolección -->
+            <div class="form-group full-width">
+              <label>Recolección</label>
+              <label class="checkbox-label"><input type="checkbox" id="transporte"> Transporte</label>
+              <label class="checkbox-label"><input type="checkbox" id="recoleccionEntrega"> Recolección entrega</label>
+            </div>
+
+            <!-- Fila 4 -->
+            <div class="form-group">
+              <label for="documento">Número Documento</label>
+              <input type="text" id="documento" placeholder="Número de documento" class="input-field">
+            </div>
+
+            <div class="form-group">
+              <label for="lugarOrigen">Lugar de origen</label>
+              <input type="text" id="lugarOrigen" placeholder="Lugar de origen" class="input-field">
+            </div>
+
+            <div class="form-group">
+              <label for="paisOrigen">País de origen</label>
+              <input type="text" id="paisOrigen" placeholder="País de origen" class="input-field">
+            </div>
+
+
+
+
+            <div class="form-group">
+              <label for="lugarDestino">Lugar de destino</label>
+              <input type="text" id="lugarDestino" placeholder="Lugar de destino" class="input-field">
+            </div>
+
+            <div class="form-group">
+              <label for="paisDestino">País de destino</label>
+              <input type="text" id="paisDestino" placeholder="País de destino" class="input-field">
+            </div>
+          </div>
+
+          <!-- Permisos -->
+          <div class="permisos-extra-box">
+            <label>Permisos</label>
+            <div class="permisos-checkboxes">
+              <label><input type="checkbox"> JVQ</label>
+              <label><input type="checkbox"> CSSP</label>
+              <label><input type="checkbox"> Salud</label>
+              <label><input type="checkbox"> MAG</label>
+              <label><input type="checkbox"> Defensa</label>
+              <label><input type="checkbox"> Aduana</label>
+            </div>
+
+            <div class="permisos-especificar">
+              <label for="Especificar">Especificar</label>
+              <input type="text" placeholder="Especificar otros servicios" class="input-fieldLargo">
+              <button class="btnAñadirPermiso" id="btnAñadirPermiso">+ Añadir nuevo permiso</button>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="modalPermisos" class="modalAgregar"> <!--Cambiada-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Agregar nuevo permiso</h3>
+            <span id="btnCerrarPermisos" class="btn-close">✕</span> <!--Cambiada-->
+          </div>
+          <form id="frmAgregarpermisos">
+            <input type="text" id="inputsModals" placeholder="Nuevo permiso" required /> <!--Cambiada-->
+            <button type="submit" class="contrast">Guardar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">Datos contables</div>
+        <div class="accordion-body">
+          <div class="form-container">
+            <div class="form-group">
+              <label for="Aduanales">Serv. Aduanales</label>
+              <input type="number" id="serAduanales" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="TransLocal">Transporte Local</label>
+              <input type="number" id="transLocal" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="transInterno">Transporte interno</label>
+              <input type="number" id="transInterno" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Permisos">Permisos</label>
+              <input type="number" id="permisos" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="PagAdicional">Pagina Adicional</label>
+              <input type="number" id="pagAdicional" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="EmisionBL">Emisiòn de BL</label>
+              <input type="number" id="emisionBL" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Manejos">Manejos</label>
+              <input type="number" id="manejos" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="IVA">IVA</label>
+              <input type="number" id="IVA" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="retencionIVA">Retención de IVA</label>
+              <input type="number" id="RIVA" placeholder="Opcional" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Total">Total</label>
+              <input type="number" id="total" placeholder="Opcional" class="input-field">
+            </div>
+
+            <button id="btnAgregarDatosC" class="btnAñadirDContables">+ Añadir nuevos datos contables</button>
+
+
+
+          </div>
+        </div>
+      </div>
+
+      <div id="modalAgregarDatosC" class="modalAgregar"> <!--Cambiada-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Agregar nuevo dato contable</h3>
+            <span id="btnCerrarDatosC" class="btn-close">✕</span> <!--Cambiada-->
+          </div>
+          <form id="frmAgregarDatosC">
+            <input type="text" id="inputsModals" placeholder="Nuevo dato contable" required /> <!--Cambiada-->
+            <button type="submit" class="contrast">Guardar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">Financiamientos</div>
+        <div class="accordion-body">
+          <div class="form-container">
+            <div class="form-group">
+              <label for="impuestos">Impuestos</label>
+              <input type="number" id="impuestos" placeholder="Impuestos" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="complemento">Complemento</label>
+              <input type="number" id="complemento" placeholder="Complemento" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="almacenajes">Almacenajes</label>
+              <input type="number" id="almacenajes" placeholder="Almacenajes" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Transporte">Transporte</label>
+              <input type="number" id="transporte" placeholder="Transporte" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Transporte">Transporte</label>
+              <input type="number" id="transporte" placeholder="Transporte" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="impresiones">Impresiones</label>
+              <input type="number" id="impresiones" placeholder="Impresiones" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Cuadrilla">Cuadrilla</label>
+              <input type="number" id="cuadrilla" placeholder="Cuadrilla" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Permisos">Permisos</label>
+              <input type="number" id="permisos" placeholder="Permisos" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Multas">Multas</label>
+              <input type="number" id="multas" placeholder="multas" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="OIRSA">OIRSA</label>
+              <input type="number" id="OIRSA" placeholder="OIRSA" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Parqueo">Parqueo</label>
+              <input type="number" id="parqueo" placeholder="Parqueo" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Flete">Flete</label>
+              <input type="number" id="flete" placeholder="Flete" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Manejo">Manejo</label>
+              <input type="number" id="manejo" placeholder="Manejo" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="CopiasEscaner">Copias/Scanner</label>
+              <input type="number" id="CS" placeholder="Copias/Scanner" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Seguridad">Seguridad</label>
+              <input type="number" id="seguridad" placeholder="Seguridad" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="PreviaMag">Previa Mag</label>
+              <input type="number" id="previaMAG" placeholder="Previa MAG" class="input-field">
+            </div>
+            <div class="form-group">
+              <label for="Total">Total</label>
+              <input type="number" id="total" placeholder="Total" class="input-field">
+            </div>
+
+            <button id="btnAgregarFinanciamientos" class="btnAñadirFinanciamiento">+ Añadir nuevos
+              financiamientos</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="modalAgregarFinanciamiento" class="modalAgregar"> <!--Cambiada-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Agregar nuevo financiamiento</h3>
+            <span id="btnCerrarModal" class="btn-close">✕</span>
+          </div>
+          <form id="frmAgregarFinanciamiento">
+            <input type="text" id="inputsModals" placeholder="Nuevo financiamiento" required />
+            <button type="submit" class="contrast">Guardar</button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="accordion">
+        <div class="accordion-header">Observaciones</div>
+        <div class="accordion-body">
+
+          <h3>Estado</h3>
+          <select id="colorEstado" class="input-field">
+            <option value="">Seleccione</option>
+            <option value="Verder">Verde</option>
+            <option value="Amarillo">Amarillo</option>
+            <option value="Rojo">Rojo</option>
+          </select>
+
+          <div class="form-group full-width">
+            <label for="observaciones">Observaciones</label>
+            <input type="text" id="observaciones" placeholder="Observaciones del pedido" class="input-field">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Pasos:</h3>
+      <button class="station-btn">1. Encabezado</button>
+      <button class="station-btn">2. Información</button>
+      <button class="station-btn">3. Servicios</button>
+      <button class="station-btn">4. Datos contables</button>
+      <button class="station-btn">5. Financiamientos</button>
+      <button class="station-btn">6. Observaciones</button>
+      <button class="save-btn">Guardar</button>
+    </aside>
+
+  </main>
+
+</body>
+<script src="js/ServiceOrder.js"></script>
+
+</html>

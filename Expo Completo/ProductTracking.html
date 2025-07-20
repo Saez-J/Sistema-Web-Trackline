@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomePage-Trackline</title>
+  <link rel="stylesheet" href="css/ProductTracking.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+ <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/CamionLogo.png" alt="" />
+      <span class="logo-text">TrackLine</span>
+    </div>
+    <div class="menu-toggle" id="menuToggle">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+    </div>
+  </header>
+
+  <!-- Overlay del menú -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Menú lateral -->
+  <nav class="side-menu" id="sideMenu">
+    <div class="menu-header">
+      <h3>Menú Principal</h3>
+    </div>
+    <div class="menu">
+      <a href="Contact.html" class="menu-item"><i class="fa-solid fa-phone"></i></i>Contactanos</a>
+      <a href="Account.html" class="menu-item"><i class="fa-solid fa-user"></i>Mi cuenta</a>
+      <a href="#" class="menu-item"><i class="fa-solid fa-truck-fast"></i>Entregas</a>
+    </div>
+    <div class="close">
+    <button id="btncerrarSesion" class="cerrarSesion"><i class="fa-solid fa-xmark"></i></i>Cerrar Sesion</button>
+    </div>
+  </nav>
+
+
+  <main>
+    <div class="seguimiento-contenedor">
+      <div class="seguimientotxt">
+        <h1 class="SVtxt">Seguimiento de viaje</h1>
+        <h2 class="SPtxt">Seguimiento del Producto # 1</h2>
+      </div>
+
+      <div class="seguimiento-box">
+        <label><span>Resección de documentos</span><input type="checkbox"></label>
+        <label><span>Clasificación arancelaria</span><input type="checkbox"></label>
+        <label><span>Digitación</span><input type="checkbox"></label>
+        <label><span>Registro</span><input type="checkbox"></label>
+        <label><span>Pago</span><input type="checkbox"></label>
+
+        <div class="selectivo">
+          <span>Selectivo</span>
+          <div class="checkbox-colores">
+            <label class="check-rojo">
+              <input type="checkbox" name="selectivo" />
+            </label>
+            <label class="check-amarillo">
+              <input type="checkbox" name="selectivo" />
+            </label>
+            <label class="check-verde">
+              <input type="checkbox" name="selectivo" />
+            </label>
+          </div>
+        </div>
+
+
+
+        <label><span>Orden de levante</span><input type="checkbox"></label>
+        <label><span>Transporte adicional</span><input type="checkbox"></label>
+      </div>
+
+      <div class="boton-finalizar">
+        <button>Finalizar</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/ProductTracking.js"></script>
+</body>
+
+</html>
