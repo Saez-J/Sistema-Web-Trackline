@@ -54,3 +54,7 @@ document.addEventListener('keydown', function (e) {
     closeMenu();
   }
 });
+
+document.getElementById('btnIngresar').addEventListener('click', function() {
+  window.location.href = 'HomePage.html';
+});

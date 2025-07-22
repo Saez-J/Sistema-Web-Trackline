@@ -182,3 +182,7 @@ document.querySelectorAll('.accordion-header').forEach(header => {
     accordion.classList.toggle('active');
   });
 });
+
+document.getElementById('btncerrarSesion').addEventListener('click', function() {
+  window.location.href = 'Login.html';
+});

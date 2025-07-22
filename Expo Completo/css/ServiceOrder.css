@@ -93,7 +93,7 @@ width: 75px;
 
 /* Menú lateral */
 .side-menu {
-    position: absolute;
+    position: fixed;
     right: -300px;
     width: 300px;
     height: 100%;
@@ -160,9 +160,10 @@ margin-left: 60px;
 border-style: none;
 }
 
-.cerrarSesion :hover{
+.cerrarSesion:hover{
     border-color: white;
     transform: scale(1.1);
+    transition: background 0.5s ease;
     background-color: #0A1D37;
     color: #fff;
 }
@@ -416,7 +417,7 @@ gap: 1rem;
 }
 
 .input-fieldLargo{
-  width: 850px;
+  width: 600px;
   margin-right: 150px;
     padding: 0.8rem 1rem;
   margin-bottom: 15px;

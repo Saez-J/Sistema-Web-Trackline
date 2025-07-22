@@ -55,8 +55,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-
-
+// ---
 
 // Lista de clientes
 const clientes = [
@@ -81,45 +80,32 @@ function cargarClientes() {
         <strong>NIT:</strong> ${cliente.nit}<br>
         <strong>Nombre:</strong> ${cliente.nombre} ${cliente.apellido}
       </div>
-      <button class="boton-agregar" onclick="agregarNit('${cliente.idUsuario}')">Agregar NIT</button>
+      <button class="boton-agregar btNAgregarNit">Agregar NIT</button>
     `;
 
     contenedor.appendChild(div);
   });
+
+  // Agregar listeners después de insertar los botones
+  const botones = document.querySelectorAll('.btNAgregarNit');
+  botones.forEach(boton => {
+    boton.addEventListener('click', function () {
+      window.location.href = '/ServiceOrder.html';
+    });
+  });
 }
 
-// Mostrar sección al hacer clic en "Sí"
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector('.respuestaSi').addEventListener('click', function () {
-    const seccion = document.getElementById('busquedaNit');
-    seccion.style.display = 'block';
-    cargarClientes(); // <- Aquí solo cargamos, el scroll irá adentro
+
+
+// Espera a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+  const RespuestaNit = document.getElementById('btnNo');
+
+  RespuestaNit.addEventListener('click', function() {
+    // Redirige a la nueva página
+    window.location.href = '/HomePage.html';
   });
 });
-
-
-// Cargar clientes al contenedor
-function cargarClientes() {
-  const contenedor = document.getElementById('listaClientes');
-  contenedor.innerHTML = ''; // Limpiar
-
-  clientes.forEach(cliente => {
-    const div = document.createElement('div');
-    div.classList.add('cliente');
-
-    div.innerHTML = `
-      <div class="cliente-info">
-        <strong>NIT:</strong> ${cliente.nit}<br>
-        <strong>Nombre:</strong> ${cliente.nombre} ${cliente.apellido}
-      </div>
-      <button class="boton-agregar" onclick="agregarNit('${cliente.idUsuario}')">Agregar NIT</button>
-    `;
-
-    contenedor.appendChild(div);
-  });
-
-   document.getElementById('busquedaNit').scrollIntoView({ behavior: 'smooth' });
-}
 
 // Mostrar sección al hacer clic en "Sí"
 document.addEventListener('DOMContentLoaded', function () {
@@ -127,25 +113,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const seccion = document.getElementById('busquedaNit');
     seccion.style.display = 'block';
     seccion.scrollIntoView({ behavior: 'smooth' });
-    cargarClientes(); // Mostrar clientes al hacer scroll
+    cargarClientes(); // Mostrar clientes y asignar listeners al hacer scroll
   });
 });
 
-// Filtro de búsqueda
-function filtrarClientes() {
-  const filtro = document.getElementById('inputBusquedaNit').value.toLowerCase();
-  const clientesDOM = document.querySelectorAll('#listaClientes .cliente');
-
-  clientesDOM.forEach(cliente => {
-    const texto = cliente.textContent.toLowerCase();
-    cliente.style.display = texto.includes(filtro) ? '' : 'none';
-  });
-}
-
-// Acción del botón Agregar NIT (puedes personalizar esto)
-function agregarNit(idUsuario) {
-  alert(`Se agregó el NIT del usuario con ID ${idUsuario}`);
-}
 
 
 // Filtro de búsqueda
@@ -159,18 +130,10 @@ function filtrarClientes() {
   });
 }
 
-// Acción del botón Agregar NIT (puedes personalizar esto)
-function agregarNit(idUsuario) {
-  alert(`Se agregó el NIT del usuario con ID ${idUsuario}`);
-}
 
 
-// Espera a que el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', function() {
-    const respuestaNo = document.getElementById('btnNo');
 
-    respuestaNo.addEventListener('click', function() {
-        // Redirige a la nueva página
-        window.location.href = '/HomePage.html';
-    });
+
+document.getElementById('btncerrarSesion').addEventListener('click', function() {
+  window.location.href = 'Login.html';
 });
