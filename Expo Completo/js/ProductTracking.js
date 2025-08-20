@@ -55,6 +55,62 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-document.getElementById('btncerrarSesion').addEventListener('click', function() {
+document.getElementById('btncerrarSesion').addEventListener('click', function () {
   window.location.href = 'Login.html';
+});
+
+
+const chkTransporte = document.getElementById('chkTransporte');
+const segundoRecuadro = document.getElementById('segundo-recuadro');
+
+chkTransporte.addEventListener('change', function () {
+  if (this.checked) {
+    segundoRecuadro.style.display = 'block';
+  } else {
+    segundoRecuadro.style.display = 'none';
+  }
+});
+
+
+const btnFinalizar = document.getElementById('btnFinalizar');
+
+btnFinalizar.addEventListener('click', function () {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const algunoMarcado = Array.from(checkboxes).some(cb => cb.checked);
+
+  const selectivo = document.getElementById('selectivo').value;
+
+  if (!algunoMarcado) {
+    Swal.fire({
+      title: "Atención",
+      text: "Debes marcar al menos una opción antes de finalizar.",
+      icon: "warning",
+      confirmButtonText: "Entendido"
+    });
+  } else if (selectivo === "rojo") {
+    Swal.fire({
+      title: "No puedes finalizar",
+      text: "El estado selectivo está en ROJO. Corrige antes de continuar.",
+      icon: "error",
+      confirmButtonText: "Entendido"
+    });
+  } else if (selectivo === "") {
+    Swal.fire({
+      title: "Atención",
+      text: "Debes seleccionar un estado del selectivo.",
+      icon: "warning",
+      confirmButtonText: "Entendido"
+    });
+  } else {
+    Swal.fire({
+      title: "¡Felicidades!",
+      text: "El seguimiento ha sido completado con éxito.",
+      icon: "success",
+      confirmButtonText: "Aceptar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "Orders.html";
+      }
+    });
+  }
 });

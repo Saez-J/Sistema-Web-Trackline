@@ -37,10 +37,10 @@
     </div>
     <div class="menu">
       <a href="Contact.html" class="menu-item"><i class="fa-solid fa-phone"></i></i>Contactanos</a>
-            <a href="Account.html" class="menu-item"><i class="fa-solid fa-user"></i>Mi cuenta</a>
-            <a href="ProductTracking.html" class="menu-item"><i class="fa-solid fa-truck-fast"></i>Seguimiento</a>
-            <a href="AddNit.html" class="menu-item"><i class="fa-solid fa-inbox"></i>Pedidos Aduanales</a>
-            <a href="ServiceOrder.html" class="menu-item"><i class="fa-solid fa-calendar-days"></i>Ordenes de Servicio</a>
+      <a href="Account.html" class="menu-item"><i class="fa-solid fa-user"></i>Mi cuenta</a>
+      <a href="ProductTracking.html" class="menu-item"><i class="fa-solid fa-truck-fast"></i>Seguimiento</a>
+      <a href="AddNit.html" class="menu-item"><i class="fa-solid fa-inbox"></i>Pedidos Aduanales</a>
+      <a href="ServiceOrder.html" class="menu-item"><i class="fa-solid fa-calendar-days"></i>Ordenes de Servicio</a>
     </div>
     <div class="close">
       <button id="btncerrarSesion" class="cerrarSesion"><i class="fa-solid fa-xmark"></i></i>Cerrar Sesion</button>
@@ -94,6 +94,9 @@
               <label for="RegistroIVA2">Registro IVA</label>
               <input type="number" id="RegistroIVA2" placeholder="Opcional" class="input-field">
             </div>
+            <div class="form-group">
+              <button type="submit" class="buttons-form">Guardar y Siguiente</button>
+            </div>
           </div>
         </div>
       </div>
@@ -125,6 +128,9 @@
             <div class="form-group">
               <label for="volumen">Volumen</label>
               <input type="number" id="volumen" placeholder="Volumen" class="input-field">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="buttons-form">Guardar y Siguiente</button>
             </div>
           </div>
         </div>
@@ -222,6 +228,9 @@
               <label for="Especificar">Especificar</label>
               <input type="text" placeholder="Especificar otros servicios" class="input-fieldLargo">
               <button class="btnAñadirPermiso" id="btnAñadirPermiso">+ Añadir nuevo permiso</button>
+              <div class="form-group">
+              <button type="submit" class="buttons-form">Guardar y Siguiente</button>
+            </div>
 
 
             </div>
@@ -239,7 +248,7 @@
           </div>
           <form id="frmAgregarpermisos">
             <input type="text" id="inputsModals" placeholder="Nuevo permiso" required /> <!--Cambiada-->
-            <button type="submit" class="contrast">Guardar</button>
+            <button type="submit" class="contrast">Guardar y Siguiente</button>
           </form>
         </div>
       </div>
@@ -291,7 +300,9 @@
 
             <button id="btnAgregarDatosC" class="btnAñadirDContables">+ Añadir nuevos datos contables</button>
 
-
+            <div class="form-group">
+              <button type="submit" class="buttons-form">Guardar y Siguiente</button>
+            </div>  
 
           </div>
         </div>
@@ -305,7 +316,7 @@
           </div>
           <form id="frmAgregarDatosC">
             <input type="text" id="inputsModals" placeholder="Nuevo dato contable" required /> <!--Cambiada-->
-            <button type="submit" class="contrast">Guardar</button>
+            <button type="submit" class="contrast">Guardar y Siguiente</button>
           </form>
         </div>
       </div>
@@ -385,6 +396,10 @@
 
             <button id="btnAgregarFinanciamientos" class="btnAñadirFinanciamiento">+ Añadir nuevos
               financiamientos</button>
+
+              <div class="form-group">
+              <button type="submit" class="buttons-form">Guardar y Siguiente</button>
+            </div>
           </div>
         </div>
       </div>
@@ -397,7 +412,7 @@
           </div>
           <form id="frmAgregarFinanciamiento">
             <input type="text" id="inputsModals" placeholder="Nuevo financiamiento" required />
-            <button type="submit" class="contrast">Guardar</button>
+            <button type="submit" class="contrast">Guardar y Siguiente</button>
           </form>
         </div>
       </div>
@@ -419,21 +434,35 @@
             <label for="observaciones">Observaciones</label>
             <input type="text" id="observaciones" placeholder="Observaciones del pedido" class="input-field">
           </div>
+          <div class="form-group">
+              <button type="submit" class="buttons-form">Guardar y Siguiente</button>
+            </div>
         </div>
       </div>
+
+      <div class="accordion">
+        <div class="accordion-header">Transporte</div>
+        <div class="accordion-body">
+
+          <h3>Asignación de transporte</h3>
+          <select id="colorEstado" class="input-field">
+            <option value="">Seleccione</option>
+            <option value="Verder">Verde</option>
+            <option value="Amarillo">Amarillo</option>
+            <option value="Rojo">Rojo</option>
+          </select>
+          <div class="form-group">
+              <button type="submit" class="buttons-form">Guardar y Siguiente</button>
+            </div>
+
+
+        </div>
+
+
+
+      </div>
+
     </section>
-
-    <aside class="sidebar">
-      <h3>Pasos:</h3>
-      <button class="station-btn">1. Encabezado</button>
-      <button class="station-btn">2. Información</button>
-      <button class="station-btn">3. Servicios</button>
-      <button class="station-btn">4. Datos contables</button>
-      <button class="station-btn">5. Financiamientos</button>
-      <button class="station-btn">6. Observaciones</button>
-      <button class="save-btn">Guardar</button>
-    </aside>
-
   </main>
 
 </body>

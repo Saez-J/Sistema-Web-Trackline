@@ -186,3 +186,6 @@ document.querySelectorAll('.accordion-header').forEach(header => {
 document.getElementById('btncerrarSesion').addEventListener('click', function() {
   window.location.href = 'Login.html';
 });
+
+
+//CRUD

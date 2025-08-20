@@ -196,23 +196,12 @@ main{
 }
 
 .fondo h1 {
-    margin-right: 20px; 
-    text-align: left; 
-    font-size: 2.5em; 
-    color: #fff; 
-    max-width: 60%; 
-}
-
-.fondo h1 {
-    order: 0; 
-    flex-grow: 1;
-    flex-wrap: wrap;
-    margin-right: 20px;
-    text-align: left;
-    font-size: 2.5em;
-    color: #fff ;
-    max-width: 60%;
     text-align: center;
+    font-size: 2.5em;
+    color: #fff;
+    max-width: 60%;
+    margin: 0 auto; /* Centra el título horizontalmente */
+    padding: 0 20px; /* Evita que el texto toque los bordes en móvil */
 }
 
 .tira{
@@ -222,40 +211,101 @@ main{
     width: 100%;
 }
 
-.info{
+.info {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    background: url(/img/fondo.PNG);
-    padding-left: 5px;
-    padding-right: 5px;
+    justify-content: center; /* Centra las tarjetas */
+    gap: 20px; /* Espacio uniforme entre las tarjetas */
+    background: url(../img/fondo.PNG);
+    background-size: cover;
+    padding: 30px 20px; /* Padding para que no se peguen a los bordes */
 }
 
-.info h3{
+.info-card {
+    flex: 1 1 300px; /* Permite que las tarjetas crezcan, se reduzcan y tengan un ancho base de 300px */
+    max-width: 400px; /* Evita que las tarjetas sean demasiado anchas en escritorios */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.info p{
-    text-align: center
+.info-card img {
+    width: 150px; /* Le damos un tamaño más controlable */
+    height: auto;
+    display: block; /* Centra la imagen */
+    margin: 0 auto 15px; /* Margen debajo para separarla del texto */
 }
-
-.info-card{
-    min-width: 500px;
-    width: 500px;
-}
-
-.info img{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100px;
-    margin: 5px;
-    margin-left: 200px;
-}
-
 
 footer{
     text-align: center;
     font-size: 18px;
     background-color: #0A1D37;
     color: white;
+}
+
+@media (max-width: 768px) {
+    
+    /* Header */
+    .header {
+        padding: 10px 15px;
+    }
+    .logo img {
+        width: 60px; /* Logo más pequeño */
+    }
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    /* Oculta el menú hamburguesa por defecto en pantallas grandes, pero en móviles se mostrará */
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Menú lateral */
+    .side-menu {
+        width: 250px; /* Menú más estrecho */
+        right: -250px;
+    }
+    .side-menu.active {
+        right: 0;
+    }
+
+    /* Sección principal */
+    .fondo {
+        min-height: 400px;
+        background-position: left center; /* Centra la imagen para que se vea mejor */
+    }
+
+    .fondo h1 {
+        font-size: 1.8rem; /* Texto más pequeño y legible */
+        max-width: 90%; /* Ocupa más espacio en la pantalla */
+        text-align: center;
+    }
+    
+    /* Botón de cerrar sesión */
+    .cerrarSesion {
+        margin-left: 20px;
+        padding: 15px;
+        font-size: 1rem;
+        width: calc(100% - 40px); /* Ocupa el ancho completo con padding */
+        box-sizing: border-box; /* Para que el padding no desborde el ancho */
+    }
+
+    /* Tarjetas de información */
+    .info {
+        padding: 20px 10px;
+    }
+    .info-card {
+        flex: 1 1 100%; /* Las tarjetas se apilan verticalmente */
+    }
+    .info-card img {
+        width: 120px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 10px;
+    }
 }

@@ -39,7 +39,8 @@
             <a href="Account.html" class="menu-item"><i class="fa-solid fa-user"></i>Mi cuenta</a>
             <a href="ProductTracking.html" class="menu-item"><i class="fa-solid fa-truck-fast"></i>Seguimiento</a>
             <a href="AddNit.html" class="menu-item"><i class="fa-solid fa-inbox"></i>Pedidos Aduanales</a>
-            <a href="ServiceOrder.html" class="menu-item"><i class="fa-solid fa-calendar-days"></i>Ordenes de Servicio</a>
+            <a href="ServiceOrder.html" class="menu-item"><i class="fa-solid fa-calendar-days"></i>Ordenes de
+                Servicio</a>
         </div>
         <div class="close">
             <button id="btncerrarSesion" class="cerrarSesion"><i class="fa-solid fa-xmark"></i></i>Cerrar
@@ -49,29 +50,35 @@
 
     <!--Main-->
     <main>
-        <div class="frase">
-            <h1>Rastrea tus entregas en tiempo real. Sin complicaciones.</h1>
-        </div>
-        <div class="form-container">
-            <div class="titulo">
-                <img src="img/CamionLogo.png" alt="">
-                <h1>Trackline</h1>
+        <div class="content">
+            <div class="frase">
+                <h1>Rastrea tus entregas en tiempo real. Sin complicaciones.</h1>
             </div>
-            <div class="form-group">
-                <label for="usuario"><i class="fa-solid fa-user"></i>Usuario</label>
-                <input type="text" id="usuario" placeholder="Usuario" class="input-field" required>
+            <div class="form-container">
+                <div class="form-content">
+                    <div class="titulo">
+                        <img src="img/CamionLogo.png" alt="">
+                        <h1>Trackline</h1>
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario"><i class="fa-solid fa-user"></i>Usuario</label>
+                        <input type="text" id="usuario" placeholder="Usuario" class="input-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contraseña"><i class="fa-solid fa-key"></i>Contraseña</label>
+                        <input type="text" id="contraseña" placeholder="Contraseña" class="input-field" required>
+                    </div>
+                    <div class="form-remember">
+                        <input type="checkbox" id="recordar">
+                        <p>Recuerdame</p>
+                        <a href="RememberPassword.html">¿Ha perdido su contraseña?</a>
+                    </div>
+                    <button class="btnIngresar">Ingresar<i class="fa-solid fa-arrow-right"></i></button>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="contraseña"><i class="fa-solid fa-key"></i>Contraseña</label>
-                <input type="text" id="contraseña" placeholder="Contraseña" class="input-field" required>
             </div>
-            <div class="form-remember">
-                <input type="checkbox" id="recordar">
-                <p>Recuerdame</p>
-                <a href="RememberPassword.html">¿Ha perdido su contraseña?</a>
-            </div>
-            <button class="btnIngresar">Ingresar<i class="fa-solid fa-arrow-right"></i></button>
     </main>
+
 
     <footer>TrackLine 2025 &copy; los derechos son reservados</footer>
     <script src="js/Login.js"></script>
