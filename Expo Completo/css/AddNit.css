@@ -297,6 +297,10 @@ main {
     gap: 10px;
 }
 
+#listaClientes .ClienteId{
+    visibility: hidden;
+}
+
 .cliente-info {
     font-size: 16px;
     color: #333;
