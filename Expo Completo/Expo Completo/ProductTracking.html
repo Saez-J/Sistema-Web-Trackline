@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomePage-Trackline</title>
+  <link rel="stylesheet" href="css/ProductTracking.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/CamionLogo.png" alt="" />
+      <span class="logo-text">TrackLine</span>
+    </div>
+    <div class="menu-toggle" id="menuToggle">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+    </div>
+  </header>
+
+  <!-- Overlay del menú -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Menú lateral -->
+  <nav class="side-menu" id="sideMenu">
+    <div class="menu-header">
+      <h3>Menú Principal</h3>
+    </div>
+    <div class="menu">
+      <a href="Contact.html" class="menu-item"><i class="fa-solid fa-phone"></i></i>Contactanos</a>
+      <a href="Account.html" class="menu-item"><i class="fa-solid fa-user"></i>Mi cuenta</a>
+      <a href="ProductTracking.html" class="menu-item"><i class="fa-solid fa-truck-fast"></i>Seguimiento</a>
+      <a href="AddNit.html" class="menu-item"><i class="fa-solid fa-inbox"></i>Pedidos Aduanales</a>
+      <a href="ServiceOrder.html" class="menu-item"><i class="fa-solid fa-calendar-days"></i>Ordenes de Servicio</a>
+    </div>
+    <div class="close">
+      <button id="btncerrarSesion" class="cerrarSesion"><i class="fa-solid fa-xmark"></i></i>Cerrar Sesion</button>
+    </div>
+  </nav>
+
+
+  <main>
+    <div class="seguimiento-contenedor">
+      <div class="seguimientotxt">
+        <h1 class="SVtxt">Seguimiento de viaje</h1>
+        <h2 class="SPtxt">Seguimiento del Producto # 1</h2>
+      </div>
+
+      <div class="seguimiento-box">
+        <label><span>Resección de documentos</span><input type="checkbox"></label>
+        <label><span>Clasificación arancelaria</span><input type="checkbox"></label>
+        <label><span>Digitación</span><input type="checkbox"></label>
+        <label><span>Registro</span><input type="checkbox"></label>
+        <label><span>Pago</span><input type="checkbox"></label>
+
+        <div class="selectivo-container">
+          <label for="selectivo">Selectivo:</label>
+          <select id="selectivo">
+            <option value="">Seleccionar</option>
+            <option value="rojo">🔴 Rojo</option>
+            <option value="amarillo">🟡 Amarillo</option>
+            <option value="verde">🟢 Verde</option>
+          </select>
+          <br>
+        </div>
+
+        <label><span>Orden de levante</span><input type="checkbox"></label>
+        <label><span>Transporte adicional</span><input type="checkbox" id="chkTransporte"></label>
+      </div>
+
+      <div class="seguimiento-box-segundo" id="segundo-recuadro">
+        <label><span>El producto ha sido cargado</span><input type="checkbox"></label>
+        <label><span>El camión con su pedido ha salido</span><input type="checkbox"></label>
+        <label><span>El camión llegó a la bodega con éxito</span><input type="checkbox"></label>
+      </div>
+
+      <div class="boton-finalizar">
+        <button id="btnFinalizar">Finalizar</button>
+      </div>
+    </div>
+  </main>
+
+  <!--Importacion de Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!--Importacion de SweetAlert-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <script src="js/ProductTracking.js"></script>
+</body>
+
+</html>

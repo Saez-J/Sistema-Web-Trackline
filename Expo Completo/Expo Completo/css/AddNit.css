@@ -1,0 +1,348 @@
+/*
+  ==========================================
+  GENERAL
+  ==========================================
+*/
+/* Importa la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
+
+/* Reinicia el modelo de caja y la fuente */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box; /* Crucial para evitar que el padding y el border sumen tamaño */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("../img/fondo.PNG");
+    background-size: cover;
+    background-position: center; /* Cambio a 'center' para mejor visualización en móviles */
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la pantalla */
+    display: flex; /* Uso de flexbox para centrar y organizar el contenido */
+    flex-direction: column;
+}
+
+/*
+  ==========================================
+  HEADER
+  ==========================================
+*/
+.header {
+    background-color: #0A1D37;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.logo-icon {
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(45deg, #ff6b35, #ff8c42);
+    border-radius: 5px;
+    position: relative;
+}
+
+.logo img {
+    width: 75px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Menú Hamburguesa */
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active .menu-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .menu-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .menu-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Overlay del menú */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menú lateral */
+.side-menu {
+    position: fixed; /* Cambio de 'absolute' a 'fixed' para que el menú se quede en su lugar al hacer scroll */
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: #0A1D37;
+    z-index: 999;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    display: flex; /* Uso de flexbox para distribuir el contenido */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.menu-header {
+    padding: 20px;
+    border-bottom: 1px solid #444;
+    background-color: #E36414;
+}
+
+.menu-header h3 {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: left;
+}
+
+.menu-item i {
+    padding-right: 10px;
+}
+
+.menu a:hover {
+    background-color: #EB8125;
+}
+
+.close {
+    text-align: center; /* Centra el botón */
+}
+
+.close i {
+    padding-right: 10px;
+}
+
+.cerrarSesion {
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    background-color: #D72638;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 20px; /* Agregado para darle espacio en la parte inferior */
+    width: 80%; /* Ancho flexible para adaptarse */
+    border-style: none;
+    cursor: pointer;
+}
+
+.cerrarSesion:hover {
+    border-color: white;
+    transform: scale(1.1);
+    transition: background 0.5s ease;
+    background-color: #0A1D37;
+    color: #fff;
+}
+
+/*
+  ==========================================
+  MAIN CONTENT
+  ==========================================
+*/
+main {
+    flex-grow: 1; /* Permite que el contenido principal ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Agrega padding para evitar que el contenido toque los bordes */
+}
+
+.pregunta-contenedor {
+    color: #001b41;
+    font-size: 30px;
+    /* Elimina los márgenes fijos y usa flexbox para centrar */
+    margin-top: 0;
+    margin-left: 0;
+    max-width: 800px; /* Limita el ancho en pantallas grandes */
+    width: 100%;
+    text-align: center; /* Centra el texto */
+}
+
+.pregunta-contenedor .pregunta h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espacio entre los botones */
+    margin-top: 30px;
+}
+
+.respuestaSi,
+.respuestaNo {
+    font-size: 18px;
+    padding: 1rem 3rem; /* Padding uniforme */
+    background-color: #E36414;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Permite que los botones se estiren por igual */
+    max-width: 200px; /* Ancho máximo para evitar que crezcan demasiado */
+}
+
+.respuestaSi:hover,
+.respuestaNo:hover {
+    background-color: #e68a1f;
+}
+
+/*
+  ==========================================
+  SECCIÓN DE BÚSQUEDA
+  ==========================================
+*/
+.SeccionBuscarNit {
+    display: none;
+    background-color: #001b41;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 40px auto; /* Centrado automático con margen vertical */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    width: 90%; /* Ancho flexible */
+    text-align: left;
+}
+
+.buscartxt {
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#inputBusquedaNit {
+    width: 100%; /* Ocupa el 100% del contenedor */
+    padding: 12px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#listaClientes .cliente {
+    display: flex;
+    flex-direction: column; /* Apila los elementos en móviles */
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    gap: 10px;
+}
+
+#listaClientes .ClienteId{
+    visibility: hidden;
+}
+
+.cliente-info {
+    font-size: 16px;
+    color: #333;
+}
+
+.boton-agregar {
+    background-color: #ff6a00;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%; /* Ocupa todo el ancho en móviles */
+    max-width: 150px; /* Limita el ancho en escritorios */
+}
+
+.boton-agregar:hover {
+    background-color: black;
+    transition-duration: 0.5s;
+}
+
+/*
+  ==========================================
+  MEDIA QUERIES PARA PANTALLAS GRANDES
+  ==========================================
+*/
+@media (min-width: 768px) {
+    .pregunta-contenedor .pregunta h1 {
+        font-size: 2rem;
+    }
+
+    .opciones {
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    #listaClientes .cliente {
+        flex-direction: row; /* Vuelve a la disposición horizontal */
+    }
+
+    .boton-agregar {
+        width: auto;
+    }
+}

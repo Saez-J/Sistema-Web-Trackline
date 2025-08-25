@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Orders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Pedidos</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="img/CamionLogo.png" alt="" />
+            <span class="logo-text">TrackLine</span>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </header>
+
+    <!-- Overlay del menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Menú lateral -->
+    <nav class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <h3>Menú Principal</h3>
+        </div>
+        <div class="menu">
+            <a href="Contact.html" class="menu-item"><i class="fa-solid fa-phone"></i></i>Contactanos</a>
+            <a href="Account.html" class="menu-item"><i class="fa-solid fa-user"></i>Mi cuenta</a>
+            <a href="ProductTracking.html" class="menu-item"><i class="fa-solid fa-truck-fast"></i>Seguimiento</a>
+            <a href="AddNit.html" class="menu-item"><i class="fa-solid fa-inbox"></i>Pedidos Aduanales</a>
+            <a href="ServiceOrder.html" class="menu-item"><i class="fa-solid fa-calendar-days"></i>Ordenes de Servicio</a>
+        </div>
+        <div class="close">
+            <button id="btncerrarSesion" class="cerrarSesion"><i class="fa-solid fa-xmark"></i></i>Cerrar
+                Sesion</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="titulo">
+            <h2>Rastreo de Productos</h2>
+        </div>
+
+        <div class="search-filter">
+            <input type="text" placeholder="Buscar producto" id="buscarProducto" />
+            <select id="filtroPedidos">
+                <option value="todos">Todos los pedidos</option>
+                <option value="enCamino">En camino</option>
+                <option value="devuelto">Devuelto</option>
+                <option value="cancelado">Cancelado</option>
+                <option value="entregados">Entregados</option>
+                <option value="reprogramados">Reprogramados</option>
+                <option value="retrasados">Retrasados</option>
+                <option value="tramitado">En tramite</option>
+            </select>
+        </div>
++
+        <section id="listaPedidos">
+
+        </section>
+    </main>
+
+</body>
+
+<script src="js/FuncionamientoHeader/Orders.js"></script>
+
+</html>

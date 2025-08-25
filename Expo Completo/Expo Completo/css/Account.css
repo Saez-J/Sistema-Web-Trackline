@@ -1,0 +1,356 @@
+/*
+  ==========================================
+  GENERAL
+  ==========================================
+*/
+/* Importa la fuente, sin cambios */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
+
+/* Reinicia el modelo de caja y fuentes */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box; /* Asegura un modelo de caja predecible */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url("../img/fondo.PNG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+/*
+  ==========================================
+  HEADER
+  ==========================================
+*/
+.header {
+    background-color: #0A1D37;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.logo-icon {
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(45deg, #ff6b35, #ff8c42);
+    border-radius: 5px;
+    position: relative;
+}
+
+.logo img {
+    width: 75px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Menú Hamburguesa */
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Animación del menú hamburguesa cuando está activo */
+.menu-toggle.active .menu-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .menu-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .menu-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Overlay del menú */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menú lateral */
+.side-menu {
+    position: fixed;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: #0A1D37;
+    z-index: 999;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.menu-header {
+    padding: 20px;
+    border-bottom: 1px solid #444;
+    background-color: #E36414;
+}
+
+.menu-header h3 {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: left;
+}
+
+.menu-item i {
+    padding-right: 10px;
+}
+
+.menu a:hover {
+    background-color: #EB8125;
+}
+
+.close {
+    align-items: center;
+    justify-content: center;
+}
+
+.close i {
+    padding-right: 10px;
+}
+
+.cerrarSesion {
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    background-color: #D72638;
+    padding: 20px;
+    margin-top: 100px;
+    margin-left: 60px;
+    border-style: none;
+}
+
+.cerrarSesion:hover {
+    border-color: white;
+    transform: scale(1.1);
+    transition: background 0.5s ease;
+    background-color: #0A1D37;
+    color: #fff;
+}
+
+/*
+  ==========================================
+  MAIN CONTENT
+  ==========================================
+*/
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Cambio: usar columna para apilar elementos */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Agrega un padding general para evitar que el contenido toque los bordes */
+}
+
+.frase {
+    /* Cambio: ajusta el padding y el tamaño de fuente para móviles */
+    padding: 0 20px;
+    color: #fff;
+    font-size: 20px; /* Tamaño de fuente más pequeño para móviles */
+    text-align: center;
+    margin-bottom: 25px; /* Agrega espacio debajo de la frase */
+}
+
+.titulo h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center; /* Centra el título en todas las pantallas */
+    padding-bottom: 30px;
+}
+
+.form-container {
+    /* Cambio: elimina los márgenes fijos y usa 'auto' para centrar */
+    margin: 25px auto;
+    padding: 40px 20px; /* Reduce el padding para pantallas pequeñas */
+    background-color: #0A1D37;
+    border-radius: 10px;
+    width: 90%; /* Usa un ancho porcentual para que sea flexible */
+    max-width: 850px; /* Mantiene un ancho máximo para pantallas grandes */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    /* Cambio: usa 'auto-fit' y 'minmax' para crear un diseño adaptable */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px 40px;
+}
+
+.form-use {
+    display: contents; /* Permite que los elementos hijos se coloquen directamente en el grid */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    /* Cambio: elimina los paddings fijos y deja que el grid maneje el espacio */
+    padding: 0;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.form-group i {
+    padding-right: 5px;
+}
+
+.input-field {
+    padding: 15px;
+    width: 100%; /* El 100% asegura que ocupe todo el espacio disponible */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.form-buttons {
+    /* Cambio: hace que los botones ocupen toda la fila del grid */
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan */
+    justify-content: center;
+    gap: 15px; /* Reduce la separación entre botones en pantallas pequeñas */
+    padding: 0;
+}
+
+.btnIngresar {
+    margin-top: 5px;
+    background-color: #fff;
+    color: #0A1D37;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+    width: 100%; /* Cambio: los botones ocupan todo el ancho en móviles */
+    max-width: 157px; /* Mantiene el ancho máximo para pantallas grandes */
+    height: 50px;
+    padding: 0 20px; /* Padding ajustado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container i {
+    padding-left: 10px;
+}
+
+.btnIngresar:hover {
+    background-color: #0A1D37;
+    color: #fff;
+    scale: 1.1;
+    transition: 0.1s ease-in-out;
+}
+
+/*
+  ==========================================
+  FOOTER
+  ==========================================
+*/
+footer {
+    height: auto; /* Cambio: altura automática para no tener problemas de texto */
+    text-align: center;
+    font-size: 16px; /* Tamaño de fuente más pequeño para móviles */
+    padding: 15px 10px;
+    background-color: #0A1D37;
+    color: white;
+}
+
+/*
+  ==========================================
+  MEDIA QUERIES PARA ADAPTAR EL DISEÑO
+  ==========================================
+*/
+@media (min-width: 768px) {
+    /* Estilos para tabletas y escritorios, revierte algunos cambios de móvil */
+    .frase {
+        font-size: 25px; /* Vuelve al tamaño original */
+        padding: 0 100px;
+        text-align: start;
+    }
+
+    .titulo h1 {
+        text-align: start; /* Vuelve al original */
+    }
+
+    .form-container {
+        padding: 100px 85px 120px; /* Vuelve al padding original */
+    }
+
+    .form-buttons {
+        flex-direction: row;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    .btnIngresar {
+        width: 157px; /* Vuelve al ancho original */
+    }
+
+    footer {
+        height: 40px; /* Vuelve a la altura original */
+        font-size: 18px; /* Vuelve al tamaño original */
+    }
+}
